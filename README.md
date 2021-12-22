@@ -2,4 +2,4 @@
 2 Arduino Nanos playing chess...
 
 ## Diagram
-![](../blob/main/NanoChess.png)
+![](https://raw.githubusercontent.com/patrickleboutillier/NanoChess/main/NanoChess.png)
