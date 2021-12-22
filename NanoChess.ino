@@ -41,8 +41,6 @@ void setup(){
   srand(analogRead(A0) << 10 | analogRead(A1)) ;
 
   if (digitalRead(12)){ // black
-    pinMode(A3, OUTPUT) ;
-    digitalWrite(A3, HIGH) ; // reset white
     oled.begin(&Adafruit128x64, I2C_ADDRESS) ;
     oled.setFont(Adafruit5x7) ;
     oled.clear() ;
@@ -73,8 +71,8 @@ void print_board(const char *del){
         case 7:
         case 6:
         case 5:
-          oled.print(sp) ;
           oled.print(del) ;
+          oled.print(sp) ;
           break ;
         case 3:
           oled.print(move[0]) ;
@@ -157,7 +155,7 @@ void loop(){
   am.do_move(move, MAX_NODES) ;
   if (move[0] == 'X'){
     strcpy(move, "    ") ;
-    print_board(is_black ? ">" : "<") ;
+    print_board("X") ;
     wait() ;
   }
   else if (move[0] == '='){
